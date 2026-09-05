@@ -2,6 +2,8 @@ import os;
 import time;
 import sys;
 from data.student_data import registrar_estudiantes, editar_estudiantes, eliminar_estudiante, listar_estudiantes;
+import random;
+
 
 menu_options = ["Registro de estudiantes", "Registro de Facultades", "Registro de Programas", "Solicitudes", "Salir"]
 text = " IUE STUDENT PROGRAM "
