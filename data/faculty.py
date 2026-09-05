@@ -41,7 +41,7 @@ def editar_facultades(faculties):
 
                 new_name = input("Digite el nuevo nombre que le desea asignar a la faculta ejm (Facultad de Artes): ")
                 if new_name:
-                    faculty_identifi[faculty_identifi]['name'] = new_name;
+                    faculties[faculty_identifi]['name'] = new_name;
                     print(f"¡Información actualizada correctamente: NOMBRE: {data['name']}!\n")
                     break
         except Exception as e:
@@ -59,6 +59,33 @@ def listar_facultades(faculties):
     ID: {ident}
     Name: {data['name']}
 """);          
+
+def eliminar_facultades(faculties):
+    text = "ELIMINAR DATOS DE FACULTADES"
+    while(True):
+        try:
+            print(text.center(40, "="))
+            for ident, data in faculties.items():
+                    print(f"""
+                ID: {ident}
+                Name: {data['name']}
+            """);
+            identification = input("Digite el codigo de la facultad que desea eliminar ejm(234): ")
+            print("Si deseas salir del sitema puedes escribir salir");
+
+            if identification.lower() == 'salir':
+                break
+
+            if identification in faculties:
+                deleted_faculty = faculties.pop(identification);
+                print(f"El estudiante con Codigo: {identification} ha sido eliminado correctamente!")
+                print(f"Nombre: {deleted_faculty['name']}")
+                break
+            else:
+                print(f"No se ha podido encontrar ninguna facultad con el codigo: {identification}")
+                continue
+        except Exception as e:
+            print(f"Ha ocurrido un error inesperado intentelo de nuevo! {e}")
 
                 
 
