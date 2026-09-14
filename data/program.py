@@ -120,5 +120,4 @@ def editar_programa(programs, faculties):
             break
         except Exception as e:
             print(f"Ha ocurrido un error inesperado intentelo de nuevo! {e}")
-               
-                
+            continue
