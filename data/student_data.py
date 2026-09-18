@@ -1,5 +1,3 @@
-students = {};
-
 def registrar_estudiantes(students):
     text = "REGISTRO DE ESTUDIANTES"
     while(True):
@@ -65,7 +63,7 @@ def eliminar_estudiante(students):
             identification = input("Digite el codigo del estudiante que desea editar ejm(104286921): ").strip();
             if identification.lower() == 'salir':
                 break
-            
+
             if identification in students:
                 deleted_student = students.pop(identification);
                 print(f"El estudiante con Codigo: {identification} ha sido eliminado correctamente!")
