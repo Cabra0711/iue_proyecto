@@ -23,7 +23,7 @@ def registrar_solicitud(requests, students, paz_salvo):
                 continue
 
             if students[codigo_estudiante]["estado"] != "Egresado No Graduado":
-                print("El estudiante debe estar en estado 'Egresado No Graduado' para solicitar grado.")
+                print("Lo siento este estudiante no cumple con el requisito para el")
                 continue
 
             ya_tiene_solicitud = any(
@@ -117,8 +117,6 @@ def diligenciar_paz_salvo(paz_salvo, students):
 
 def validar_requisitos(requests, students, paz_salvo):
     ident_request = input("Diligencie el codigo de la solicitud que desea buscar ejm(2123): ").strip()
-    if ident_request.lower() == "salir":
-        break;
     if len(ident_request) == 4 and ident_request.isdigit():
         if ident_request in requests:
             request = requests[ident_request]
@@ -128,7 +126,64 @@ def validar_requisitos(requests, students, paz_salvo):
                 request["cumple_requisitos"] = False
                 request["estado_solicitud"] = "Rechazada"
                 return
+            requierements = paz_salvo[student_code]
+            positivos = [
+                "trabajo_grado_aprobado", "extension_academica_paz", "ingles_aprobado",
+                "paz_salvo_financiero", "paz_salvo_cartera", "fecha_terminacion_ok",
+                "saber_pro_presentado",
+    ]
+            missing = [r for r in positivos if not requierements.get(r, False)]
+
+    
+            if requierements.get("multas_biblioteca", True):
+                missing.append("multas_biblioteca")
+
+            cumple = len(missing) == 0
+            request["cumple_requisitos"] = cumple
+            request["estado_solicitud"] = "Aprobada" if cumple else "Rechazada"
+
+            print(f"\nRESULTADO: {request['estado_solicitud']}")
+            if not cumple:
+                print(f"Requisitos pendientes: {', '.join(missing)}")
         else:
-             print("No se ha encontrado ninguna solicitud asociada a este codigo porfavor revise bien los datos y vuelva a intentarlo nuevamente!")
+            print("No se ha encontrado ninguna solicitud asociada a este codigo porfavor revise bien los datos y vuelva a intentarlo nuevamente!")
+    else:
+        print("El formato diligenciado no es valido porfavor intente de nuevo..")
 
-
+def revalidar_solicitud(requests, paz_salvo):
+    ident_request = input("Diligencie el codigo de la solicitud que desea buscar ejm(2123): ").strip()
+    if len(ident_request) == 4 and ident_request.isdigit():
+        if ident_request in requests:
+            request = requests[ident_request]
+            student_code = request["codigo_estudiante"]
+            if student_code not in paz_salvo:
+                print("Este estudiante aún no tiene el paz y salvo diligenciado. No hay nada que revalidar.")
+                request["cumple_requisitos"] = False
+                request["estado_solicitud"] = "Rechazada"
+                return
+            if request['estado_solicitud'] == "Rechazada":
+                requierements = paz_salvo[student_code]
+                positivos = [
+                "trabajo_grado_aprobado", "extension_academica_paz", "ingles_aprobado",
+                "paz_salvo_financiero", "paz_salvo_cartera", "fecha_terminacion_ok",
+                "saber_pro_presentado",
+]
+                missing = [r for r in positivos if not requierements.get(r, False)]
+                
+                    
+                if requierements.get("multas_biblioteca", True):
+                    missing.append("multas_biblioteca")
+                
+                cumple = len(missing) == 0
+                request["cumple_requisitos"] = cumple
+                request["estado_solicitud"] = "Aprobada" if cumple else "Rechazada"
+    
+                print(f"\nRESULTADO: {request['estado_solicitud']}")
+                if not cumple:
+                    print(f"Requisitos pendientes: {', '.join(missing)}")
+            else:
+                print(f"Esta solicitud está en estado '{request['estado_solicitud']}', solo se pueden revalidar las Rechazadas.")
+        else:
+            print("No se ha encontrado ninguna solicitud asociada a este codigo porfavor revise bien los datos y vuelva a intentarlo nuevamente!")
+    else:
+        print("El formato diligenciado no es valido porfavor intente de nuevo..")
