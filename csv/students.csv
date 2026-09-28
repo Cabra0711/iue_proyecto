@@ -1,0 +1,7 @@
+name,last_name,document_type,document_number,phone,faculty,program,status,average,id
+Carlos Andrés,Martínez Rojas,CC,1034861231.0,3123456789.0,1.0,20.0,Egresado No Graduado,3.5,1034861231
+María Fernanda,García López,CC,2045678901.0,3134567890.0,2.0,31.0,Egresado No Graduado,4.2,2045678901
+Juan Pablo,Ramírez Sánchez,TI,3056789012.0,3145678901.0,3.0,41.0,Egresado No Graduado,3.8,3056789012
+Ana Lucía,Pérez Torres,CC,4067890123.0,3156789012.0,4.0,10.0,Graduado,4.5,4067890123
+Luis Eduardo,Hernández Vargas,CC,5078901234.0,3167890123.0,1.0,200.0,Egresado No Graduado,3.2,5078901234
+Sofía Camila,Restrepo Muñoz,CE,6089012345.0,3178901234.0,2.0,34.0,Activo,4.7,6089012345

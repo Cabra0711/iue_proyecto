@@ -1,0 +1,34 @@
+name,faculty,formation_level,id
+Derecho,1.0,PREGRADO,020
+Seguridad y Salud en el Trabajo,1.0,PREGRADO,023
+Técnico Profesional en Tránsito Transporte y Seguridad Vial,1.0,PREGRADO,025
+Tecnología en Gestión de Proyectos Sociales y Comunitarios,1.0,PREGRADO,026
+Esp. Derecho Administrativo Laboral,1.0,POSGRADO,200
+Esp. Responsabilidad Estatal,1.0,POSGRADO,201
+Esp. Contratación Estatal,1.0,POSGRADO,202
+Esp. Derecho Disciplinario,1.0,POSGRADO,203
+Esp. Derecho Administrativo,1.0,POSGRADO,204
+Esp. Derecho Laboral y de la Seguridad Social,1.0,POSGRADO,205
+Contaduría Pública,2.0,PREGRADO,031
+Administración y Mercados Internacionales,2.0,PREGRADO,032
+Administración de Negocios Internacionales,2.0,PREGRADO,033
+Administración Financiera,2.0,PREGRADO,034
+Tecnología en Control de Gestión en Sistemas de Información Contable,2.0,PREGRADO,035
+Mercadeo,2.0,PREGRADO,036
+Esp. Finanzas y Proyectos,2.0,POSGRADO,300
+Esp. Logística,2.0,POSGRADO,301
+Esp. Gerencia,2.0,POSGRADO,302
+Psicología,3.0,PREGRADO,041
+Trabajo Social,3.0,PREGRADO,042
+Esp. Psicología de la Actividad Física y del Deporte,3.0,POSGRADO,400
+Esp. Psicogerontología,3.0,POSGRADO,401
+Maestría en Ciencias Sociales,3.0,POSGRADO,440
+Ingeniería de Sistemas,4.0,PREGRADO,010
+Ingeniería Electrónica,4.0,PREGRADO,011
+Ingeniería Industrial,4.0,PREGRADO,012
+Ingeniería Informática,4.0,PREGRADO,013
+Tecnología en Desarrollo de Sistemas de Información,4.0,PREGRADO,014
+Esp. Gestión de TIC Empresarial,4.0,POSGRADO,100
+Esp. Seguridad de la Información de las Organizaciones,4.0,POSGRADO,101
+Esp. Prospectiva Tecnológica,4.0,POSGRADO,102
+Esp. Gestión Estratégica de la Innovación,4.0,POSGRADO,103
